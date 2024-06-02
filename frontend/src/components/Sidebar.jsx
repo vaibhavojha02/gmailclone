@@ -10,26 +10,32 @@ import { Link } from "react-router-dom";
 
 const sideBarItems = [
   {
+    id:1,
     icon: <RiInboxFill size={"20px"} />,
     text: "Inbox",
   },
   {
+    id:2,
     icon: <FaRegStar size={"20px"} />,
     text: "Starred",
   },
   {
+    id:3,
     icon: <FaRegClock size={"20px"} />,
     text: "Snoozed",
   },
   {
+    id:4,
     icon: <AiOutlineSend size={"20px"} />,
     text: "Sent",
   },
   {
+    id:5,
     icon: <GrDocument size={"20px"} />,
     text: "Drafts",
   },
   {
+    id:6,
     icon: <IoChevronDownOutline size={"20px"} />,
     text: "More",
   },
@@ -48,7 +54,7 @@ const Sidebar = () => {
         {sideBarItems.map((items, index) => {
           return (
             <Link to={items.text}>
-            <div className="flex items-center  gap-4 pl-6 py-1 rounded-r-full hover:cursor-pointer my-2 hover:bg-[#a8c7fa]" >
+            <div className="flex items-center  gap-4 pl-6 py-1 rounded-r-full hover:cursor-pointer my-2 hover:bg-[#a8c7fa]" key ={items.id}>
               {items.icon}
               <p>{items.text}</p>
             </div>
