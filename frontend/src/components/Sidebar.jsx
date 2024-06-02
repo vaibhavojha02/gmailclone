@@ -6,6 +6,7 @@ import { FaRegClock } from "react-icons/fa6";
 import { AiOutlineSend } from "react-icons/ai";
 import { GrDocument } from "react-icons/gr";
 import { IoChevronDownOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const sideBarItems = [
   {
@@ -46,10 +47,12 @@ const Sidebar = () => {
       <div className="text-gray-500">
         {sideBarItems.map((items, index) => {
           return (
-            <div className="flex items-center  gap-4 pl-6 py-1 rounded-r-full hover:cursor-pointer my-2 hover:bg-[#a8c7fa]">
+            <Link to={items.text}>
+            <div className="flex items-center  gap-4 pl-6 py-1 rounded-r-full hover:cursor-pointer my-2 hover:bg-[#a8c7fa]" >
               {items.icon}
               <p>{items.text}</p>
             </div>
+            </Link>
           );
         })}
       </div>

@@ -53,16 +53,6 @@ const Navbar = () => {
   );
 };
 
-<div className="text-gray-500">
-      {sideBarItems.map((items,index)=> {
-        return (
-          <div className="flex items-center  gap-4 pl-6 py-1 rounded-r-full hover:cursor-pointer my-2 hover:bg-[#a8c7fa]">
-            {items.icon}
-           <p>{items.text}</p>
-          </div>
-        )
-      })}
 
-      </div>
 
 export default Navbar;

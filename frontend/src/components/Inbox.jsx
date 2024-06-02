@@ -2,8 +2,8 @@ import React from 'react'
 
 const Inbox = () => {
   return (
-    <div>
-      
+    <div className='bg-red-500'>
+      fgvsdfg
     </div>
   )
 }
