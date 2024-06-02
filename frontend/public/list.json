@@ -1,0 +1,26 @@
+const sideBarItems = [
+  {
+    icon: <RiInboxFill size={"20px"} />,
+    text: "Inbox",
+  },
+  {
+    icon: <FaRegStar size={"20px"} />,
+    text: "Starred",
+  },
+  {
+    icon: <FaRegClock size={"20px"} />,
+    text: "Snoozed",
+  },
+  {
+    icon: <AiOutlineSend size={"20px"} />,
+    text: "Sent",
+  },
+  {
+    icon: <GrDocument size={"20px"} />,
+    text: "Drafts",
+  },
+  {
+    icon: <IoChevronDownOutline size={"20px"} />,
+    text: "More",
+  },
+];
