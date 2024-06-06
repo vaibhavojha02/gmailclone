@@ -7,6 +7,8 @@ import { AiOutlineSend } from "react-icons/ai";
 import { GrDocument } from "react-icons/gr";
 import { IoChevronDownOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setOpen } from "../redux/appSlice";
 
 const sideBarItems = [
   {
@@ -42,10 +44,11 @@ const sideBarItems = [
 ];
 
 const Sidebar = () => {
+  const dispatch = useDispatch();
   return (
     <div className="w-[18%] ">
       <div className="p-3 ">
-        <button className="flex items-center gap-2 bg-[#c2e7ff] p-4 rounded-2xl hover:shadow-lg">
+        <button onClick={()=>dispatch(setOpen(true))} className="flex items-center gap-2 bg-[#c2e7ff] p-4 rounded-2xl hover:shadow-lg">
           <LuPencil size={"24px"} />
           Compose
         </button>

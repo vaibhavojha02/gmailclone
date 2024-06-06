@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MdCropSquare } from "react-icons/md";
+import { MdCropSquare, MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { FaCaretDown } from "react-icons/fa";
 import { RiInboxFill } from "react-icons/ri";
 import { BsTag } from "react-icons/bs";
@@ -38,6 +38,11 @@ const Inbox = () => {
             <IoMdMore size={"20px"} />
           </div>
         </div>
+        <div className="flex items-center gap-2">
+         <p className="text-sm text-gray-500">1-50 of 1000</p>
+         <button className="hover:bg-gray-100 hover:rounded-full"><MdKeyboardArrowLeft size={"24px"}/></button>
+         <button className="hover:bg-gray-100 hover:rounded-full"><MdKeyboardArrowRight size={"24px"}/></button>
+        </div>
       </div>
       <div className="h-[90vh] overflow-y-auto">
         <div className="flex items-center gap-2">
@@ -46,13 +51,13 @@ const Inbox = () => {
               
               <button key = {index} className={` ${mailTypeSelected==index?`border-b-4 border-b-blue-600 text-blue-600`:`border-b-4 border-b-transparent`}  flex w-[25%] gap-3 items-center px-2 h-[42px] hover:bg-gray-300`} onClick={() => setMailTypeSelected(index)}> 
                 {items.icon}
-                <p>{items.text}</p>
+                <p>{items.text}</p> 
               </button>
             );
           })}
         </div>
-      </div>
       <Messages/>
+      </div>
     </div>
   );
 };
