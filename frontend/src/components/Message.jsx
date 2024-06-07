@@ -1,15 +1,28 @@
 import React, { useState } from "react";
 import { MdCropSquare } from "react-icons/md";
 import { RiStarLine } from "react-icons/ri";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { setSelectedEmail } from "../redux/appSlice";
+import { motion } from "framer-motion"
 
-const Message = () => {
+const Message = ({email}) => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const openMail=()=>{
-     navigate("/mail/123rrrt45454")
+    dispatch(setSelectedEmail(email))
+     navigate(`/mail/${email.id}`)
   }
   return (
-    <div onClick={openMail} className="flex items-start justify-between border-b border-gray-200 px-4 py-1 text-sm hover:cursor-pointer hover:shadow-md hover:border hover:border-gray-300">
+    <motion.div
+      onClick={openMail}
+      className="flex items-start justify-between border-b border-gray-200 px-4 py-1 text-sm hover:cursor-pointer hover:shadow-md hover:border hover:border-gray-300"
+      whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 0.95 }}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+    >
       <div className="flex items-center gap-3">
         <div className="flex-none text-gray-300">
           <MdCropSquare className="w-5 h-5" />
@@ -19,14 +32,14 @@ const Message = () => {
         </div>
       </div>
       <div className="flex-1 ml-4">
-        <p className="text-gray-400 truncate inline-block max-w-full">
-          cnjodwcnj cdjfdjw jsfh jdjfd dkfdwf difjdwjijf djfdwklfndwkl
+        <p className={`text-black font-bold truncate inline-block max-w-full`}>
+          {email?.message}
         </p>
       </div>
       <div className="flex-none text-gray-400 text-sm">
-       Time
+        {new Date(email?.createdAt?.seconds * 1000).toLocaleString()}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
