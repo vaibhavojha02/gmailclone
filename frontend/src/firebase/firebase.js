@@ -1,10 +1,11 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { GoogleAuthProvider, getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore"
+
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBQNTf2Ch4_yeFs2VqGbkpMzyrQqR4O7pA",
+  apiKey: process.env.REACT_APP_API_KEY,
   authDomain: "clone-d5500.firebaseapp.com",
   projectId: "clone-d5500",
   storageBucket: "clone-d5500.appspot.com",
